@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Login Form</h2>
+    <form method="post" [formGroup]="firstFormGroup">
+      <input type="text" class="form-control" formControlName="Login" name="username" placeholder="Username">
+      <input type="password" class="form-control" formControlName="Password" name="password" placeholder="Password">
+      <input type="submit" (click)="Submit()" class="btn" value="Login">
+    </form>
+  </div>
