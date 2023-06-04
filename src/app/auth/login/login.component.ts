@@ -9,7 +9,7 @@ import { AuthServicesService } from 'src/app/service/auth-services.service';
 })
 export class LoginComponent implements OnInit {
 
-  
+
   constructor(
     public authService: AuthServicesService,
     private formBuilder: FormBuilder
@@ -21,14 +21,14 @@ export class LoginComponent implements OnInit {
 
   })
 
-  
+
   ngOnInit() {
 
   }
 
 
   Submit() {
-    
+
     if (this.firstFormGroup.valid) {
       console.log(this.firstFormGroup.value);
       var obj = {
@@ -53,14 +53,27 @@ export class LoginComponent implements OnInit {
 
       console.log(obj);
       debugger
-      // this.authService.Test1(obj).subscribe(res => { });
-
-      this.authService.Test2().subscribe(res => { });
+      this.authService.Test1(obj).subscribe(res => {
+        alert('success');
+       });
+        
 
     } else {
 
     }
   }
 
+
+
+  Submit3() {
+
+    debugger
+    // this.authService.Test1(obj).subscribe(res => { });
+
+    this.authService.Test3().subscribe(res => { 
+      alert('success');
+    });
+
+  }
 
 }

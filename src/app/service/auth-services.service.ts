@@ -26,5 +26,10 @@ export class AuthServicesService {
     return this.httpclient.post(this.FullPath + "Login", "");
   }
 
+  Test3() {
+
+    return this.httpclient.post(this.FullPath + "CheckConnection", "");
+  }
+
 
 }
