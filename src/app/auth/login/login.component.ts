@@ -52,8 +52,9 @@ export class LoginComponent implements OnInit {
       }
 
       console.log(obj);
-      debugger
-      this.authService.Test1(obj).subscribe(res => {
+    
+      this.authService.PostRequest('Login',obj).subscribe((res:any) => {
+        console.log(JSON.parse(res));
         alert('success');
        });
         
@@ -67,12 +68,10 @@ export class LoginComponent implements OnInit {
 
   Submit3() {
 
-    debugger
-    // this.authService.Test1(obj).subscribe(res => { });
-
-    this.authService.Test3().subscribe(res => { 
+    this.authService.PostRequest('CheckConnection',{}).subscribe((res:any) => {
+      console.log(JSON.parse(res));
       alert('success');
-    });
+     });
 
   }
 

@@ -7,28 +7,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthServicesService {
 
-  FullPath = "http://localhost:51861/PlancksoftPOSJSON_Server.svc/";
+  FullPath = "https://localhost:44349/api/Publish/publish";
  
   constructor(
     private httpclient: HttpClient,
   ) {
-    console.log("Current API URL:", this.FullPath);
+
   }
 
-
-  Test1(obj : any) {
-
-    return this.httpclient.post(this.FullPath + "Login", obj);
-  }
-
-  Test2() {
-
-    return this.httpclient.post(this.FullPath + "Login", "");
-  }
-
-  Test3() {
-
-    return this.httpclient.post(this.FullPath + "CheckConnection", "");
+  PostRequest(method:string, data:any){
+    var request = {
+      Method:method,
+      Data:data
+    }
+    return this.httpclient.post(this.FullPath , request);
   }
 
 
